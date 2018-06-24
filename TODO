@@ -1,0 +1,8 @@
+Install Grafana and InfluxDB on an AWS host with these instructions (except don't use docker, cos then plugins are hard):
+https://www.easyitblog.info/2017/11/26/influxdb-in-iot-world-making-it-production-ready-part-3/
+
+(info on plugins and docker? : https://stackoverflow.com/questions/45580792/how-to-use-grafana-cli-on-docker-installed-grafana)
+
+Use the test python dumping here on the raspi to get data into AWS:
+https://engineer.john-whittington.co.uk/2016/11/raspberry-pi-data-logger-influxdb-grafana/
+

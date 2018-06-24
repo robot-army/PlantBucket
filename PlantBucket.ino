@@ -50,6 +50,7 @@ void setup() {
   {
     // do nothing
   } ;
+  Serial.println("For code (or at least something like it), see https://github.com/robot-army/PlantBucket");
   Serial.println("------------------------------------");
   Serial.println("Temperature");
   Serial.print  ("Sensor:       "); Serial.println(sensor.name);
@@ -87,17 +88,17 @@ void loop() {
     int inval = Serial.read();
     
     if (inval == 114) {
-      //  Serial.print("Moisture Raw Value: ");
+      Serial.print("{\"Moisture\": \"");
       Serial.print(waterValue);
-      Serial.print(",");
+      Serial.print("\",");
 
       if (isnan(event.temperature)) {
         Serial.print("0");
       }
       else {
-        //   Serial.print("Temperature: ");
+      Serial.print("\"Temperature\": \"");
         Serial.print(event.temperature);
-        Serial.print(",");
+        Serial.print("\",");
       }
       // Get humidity event and print its value.
       dht.humidity().getEvent(&event);
@@ -107,9 +108,9 @@ void loop() {
         Serial.println("0");
       }
       else {
-        //   Serial.println("Humidity: ");
-        Serial.println(event.relative_humidity);
-        //  Serial.println("%");
+      Serial.print("\"Humidity\": \"");
+        Serial.print(event.relative_humidity);
+        Serial.println("\"}");
       }
     }
 
